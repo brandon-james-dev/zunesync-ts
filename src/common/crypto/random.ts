@@ -2,8 +2,10 @@
  * Cryptographically secure random bytes from the platform's WebCrypto
  * implementation.
  *
- * `globalThis.crypto.getRandomValues` exists in every browser, in Node 18+
- * and in Tauri's webview, so no `node:crypto` import is needed.
+ * `globalThis.crypto.getRandomValues` exists in every browser, in Node 20+ and
+ * in Tauri's webview, so no `node:crypto` import is needed. Node 18 is excluded
+ * because `crypto` only became a default global in Node 19; on 18 it is present
+ * solely behind `--experimental-global-webcrypto`.
  */
 
 /** Fill a new array with `length` cryptographically secure random bytes. */
