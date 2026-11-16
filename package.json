@@ -19,7 +19,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc",
     "test": "node --import tsx src/__tests__/validate.ts",
     "lint": "tsc --noEmit",
     "prepublishOnly": "npm run lint && npm run build && npm test"
@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/brandon-james-dev/zunesync-ts#readme",
   "optionalDependencies": {
-    "usb": "^2.13.0"
+    "usb": "^3.3.0"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
