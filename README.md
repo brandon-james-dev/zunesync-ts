@@ -324,9 +324,29 @@ Fields are written from the end of the record towards the fixed header: payload,
 
 ```bash
 npm run lint    # tsc --noEmit
-npm run build   # tsc
+npm run build   # clean dist, then tsc
 npm test        # node --import tsx src/__tests__/validate.ts
 ```
+
+## Releasing
+
+Publishing is driven by a tag. Pushing a `v*` tag runs
+[`.github/workflows/release.yml`](.github/workflows/release.yml), which checks
+that the tag matches `package.json`, then lints, builds, tests, publishes to npm
+with provenance and creates a GitHub release with the tarball attached.
+
+```bash
+npm run release:patch   # or release:minor / release:major
+git push --follow-tags
+```
+
+`npm version` bumps `package.json`, commits and creates the matching tag. The
+workflow refuses a tag whose version differs from `package.json`, so the two
+cannot drift.
+
+Requires an `NPM_TOKEN` repository secret: an npm automation token with publish
+rights on `zunesync-ts`. `--provenance` uses the workflow's OIDC token, so no
+extra secret is needed for that.
 
 ## License
 
