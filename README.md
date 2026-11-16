@@ -1,6 +1,12 @@
 # zunesync-ts
 
+[![npm version](https://img.shields.io/npm/v/zunesync-ts.svg)](https://www.npmjs.com/package/zunesync-ts)
+[![npm downloads](https://img.shields.io/npm/dm/zunesync-ts.svg)](https://www.npmjs.com/package/zunesync-ts)
+[![license](https://img.shields.io/npm/l/zunesync-ts.svg)](https://github.com/brandon-james-dev/zunesync-ts/blob/main/LICENSE)
+
 A TypeScript/JavaScript library for reading and writing a connected Zune. It parses the ZMDB media database, reads album artwork, and syncs tracks, albums, artists and podcasts over MTPZ. Runs in **Node.js** through `node-usb`, or in the browser through any `MtpTransport` implementation — the package ships `UsbTransport` and `MemoryTransport`, and a WebUSB transport is a small adapter over the same interface.
+
+Published on npm as [`zunesync-ts`](https://www.npmjs.com/package/zunesync-ts).
 
 Ported from [zune-explorer](https://github.com/NiceBeard/zune-explorer) (MIT), rewritten from scratch in TypeScript with typed records, a transport abstraction and a transactional sync session.
 
