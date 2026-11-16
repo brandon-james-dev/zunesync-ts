@@ -1,6 +1,6 @@
 {
   "name": "zunesync-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript library for reading and writing a Zune's ZMDB database and syncing music over MTPZ. Node via node-usb; browser via a pluggable transport.",
   "type": "module",
   "main": "./dist/index.js",
